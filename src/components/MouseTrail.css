@@ -1,0 +1,19 @@
+.trail-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  /* The JS will set the width and height, but we center the dot 
+     by translating it -50% of its *own* size. */
+  transform: translate(-50%, -50%); 
+
+  /* Use your theme color! */
+  background-color: var(--primary-color);
+  
+  border-radius: 50%;
+  pointer-events: none; /* So you can click "through" it */
+  z-index: 9999; /* On top of everything */
+  
+  /* This is a very cool blend effect */
+  mix-blend-mode: difference;
+}

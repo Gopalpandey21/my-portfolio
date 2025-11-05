@@ -1,0 +1,37 @@
+/* src/pages/Skills.css */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 25px;
+}
+
+.skill-card {
+  background-color: var(--card-color);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
+
+/* This targets the <svg> icon from react-icons */
+.skill-card svg {
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+
+.skill-card p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--text-color);
+}

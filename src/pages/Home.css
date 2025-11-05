@@ -1,0 +1,109 @@
+/* src/pages/Home.css */
+
+.home-container {
+  min-height: 80vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* This is for your profile picture */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.home-container h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.home-container h2 {
+  font-size: 1.8rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 20px;
+}
+
+.home-container p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.social-links {
+  display: flex;
+  gap: 25px;
+}
+
+.social-links a {
+  color: var(--text-color-secondary);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* src/pages/Home.css (ADD THIS TO THE BOTTOM) */
+
+.home-projects-section {
+  width: 100%;
+  padding: 40px 0;
+  background-color: #202734; /* Slightly different background */
+  text-align: center;
+}
+
+.home-projects-section h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+  display: inline-block;
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+
+/* src/pages/Home.css */
+/* ... (keep all your existing styles above) ... */
+
+/* --- NEW: Typing Effect --- */
+
+/* Apply this to your h2 */
+.typing-effect {
+  /* This 'ch' unit is the width of one character. 
+     "I am a Web Developer" is 20 characters. 
+     If you change the text, change this number!
+  */
+  width: 20ch; 
+  
+  overflow: hidden; /* Hides the text that's not typed yet */
+  white-space: nowrap; /* Keeps it on one line */
+  
+  /* This creates the blinking cursor */
+  border-right: 4px solid var(--primary-color); 
+  
+  /* Run the typing animation, then run the blink animation */
+  animation: 
+    typing 3.5s steps(20, end), /* 3.5s duration, 20 steps */
+    blink-caret 0.75s step-end infinite;
+}
+
+/* Keyframes for the typing */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 20ch } /* Must match the width above */
+}
+
+/* Keyframes for the blinking cursor */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--primary-color) }
+}

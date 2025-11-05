@@ -1,0 +1,34 @@
+/* src/components/Footer.css */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100px; /* Set a fixed height */
+  background-color: var(--card-color);
+  color: var(--text-color-secondary);
+  margin-top: 40px; /* Add some space above the footer */
+  width: 100%;
+}
+
+.social-links-footer {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.social-links-footer a {
+  color: var(--text-color-secondary);
+  transition: color 0.3s ease;
+}
+
+.social-links-footer a:hover {
+  color: var(--primary-color);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}

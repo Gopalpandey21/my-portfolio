@@ -1,0 +1,54 @@
+/* src/pages/Projects.css */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: var(--card-color);
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  color: var(--text-color-secondary);
+  font-size: 1rem;
+  flex-grow: 1; /* Makes description fill space */
+  margin-bottom: 20px;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-links a {
+  color: var(--text-color);
+  background-color: var(--secondary-color); /* A slightly lighter gray */
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
