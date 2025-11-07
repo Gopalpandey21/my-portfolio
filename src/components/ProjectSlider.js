@@ -7,24 +7,22 @@ import './ProjectSlider.css';
 const ProjectSlider = ({ projects, loading }) => {
   const settings = {
     dots: true,
-    infinite: true, // <-- Changed back to true for looping autoplay
+    infinite: true, 
     speed: 500,
-    slidesToShow: 3,    // Default for desktop
+    slidesToShow: 3,    // For desktop
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    responsive: [
+    responsive: [       // <-- THIS IS THE FIX
       {
         breakpoint: 1024, // For tablets
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          infinite: true,
-          dots: true
         }
       },
       {
-        breakpoint: 768,  // <-- Changed from 600 to catch all mobile
+        breakpoint: 768,  // For mobile
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1

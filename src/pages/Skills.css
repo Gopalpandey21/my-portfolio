@@ -1,37 +1,79 @@
 /* src/pages/Skills.css */
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 25px;
+/* --- The Main Swiper Container --- */
+/* The "Cards" effect needs a fixed size */
+.mySkillSwiper {
+  width: 320px;
+  height: 400px; /* Give it a set height */
+  margin-top: 50px;
 }
 
+/* --- Each Slide --- */
+/* The library styles the slide position.
+   We just need to make sure it's centered. */
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* --- ADD THESE --- */
+  /* This blurs the card by default */
+  filter: blur(4px); 
+  /* This makes the blur fade in/out smoothly */
+  transition: filter 0.5s ease; 
+}
+
+/* --- ADD THIS NEW RULE --- */
+/* This makes the FRONT card sharp */
+.swiper-slide-active {
+  filter: blur(0px);
+}
+
+/* --- Your Skill Card --- */
 .skill-card {
+  /* ... (all your existing styles) ... */
   background-color: var(--card-color);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+
+  /* --- ADD THIS --- */
+  /* This helps the card transition smoothly with the blur */
+  transition: transform 0.5s ease;
 }
 
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
-}
-
-/* This targets the <svg> icon from react-icons */
 .skill-card svg {
-  font-size: 4rem;
+  font-size: 5rem; /* A bit bigger */
   color: var(--primary-color);
 }
 
 .skill-card p {
-  font-size: 1.1rem;
+  font-size: 1.5rem; /* A bit bigger */
   font-weight: bold;
   margin: 0;
   color: var(--text-color);
+}
+
+/* --- Pagination Dots --- */
+/* We need to move the dots *below* the slider */
+.mySkillSwiper .swiper-pagination {
+  position: relative; /* Un-stick it from the bottom */
+  bottom: auto;
+  margin-top: 30px; /* Add space above dots */
+}
+
+.mySkillSwiper .swiper-pagination-bullet {
+  background: var(--text-color-secondary);
+  opacity: 0.8;
+}
+
+.mySkillSwiper .swiper-pagination-bullet-active {
+  background: var(--primary-color) !important;
+  opacity: 1;
 }
