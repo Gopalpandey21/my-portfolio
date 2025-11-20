@@ -9,6 +9,7 @@ import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import MouseTrail from './components/MouseTrail';
+import FloatingTags from './components/FloatingTags';
 // --- 2. IMPORTANT: REPLACE WITH YOUR GITHUB USERNAME ---
 const GITHUB_USERNAME = 'Gopalpandey21';
 // ----------------------------------------------------
@@ -50,6 +51,7 @@ function App() {
   return (
     <BrowserRouter>
     <MouseTrail />
+    <FloatingTags />
       <Navbar />
       <Routes>
         {/* 5. Pass projects and loading state down as props */}

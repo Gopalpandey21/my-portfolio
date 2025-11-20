@@ -15,7 +15,7 @@ import FloatingTags from '../components/FloatingTags'; // <-- 1. Import
 const Home = ({ projects, loading }) => {
   return (
     <>
-    <FloatingTags />
+    
       {/* --- 1. Main Home Section (Visible on both) --- */}
       <div className="home-container">
         <h1>Hi, I'm Gopal</h1>
