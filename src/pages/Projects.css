@@ -2,10 +2,20 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* 1. Use 'auto-fit' and reduce min-width to 280px to prevent cut-off on small phones */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  
   gap: 30px;
+  
+  /* 2. THIS IS THE KEY FIX: Centers the grid columns */
+  justify-content: center; 
+  
+  /* 3. Ensures items inside are centered */
+  justify-items: center;
+  width: 100%;
 }
 
+/* Update .project-card to ensure it centers within its own space */
 .project-card {
   background-color: var(--card-color);
   border-radius: 10px;
@@ -14,15 +24,16 @@
   flex-direction: column;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* 4. Force the card to center itself */
+  width: 100%;
+  max-width: 450px; /* Optional: Stops card from getting too huge on wide screens */
+  margin: 0 auto;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-}
-
+/* ... (keep your existing .project-card h3, p, and links styles below) ... */
 .project-card h3 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--primary-color);
   margin-bottom: 15px;
 }
@@ -30,7 +41,7 @@
 .project-card p {
   color: var(--text-color-secondary);
   font-size: 1rem;
-  flex-grow: 1; /* Makes description fill space */
+  flex-grow: 1;
   margin-bottom: 20px;
 }
 
@@ -41,7 +52,7 @@
 
 .project-links a {
   color: var(--text-color);
-  background-color: var(--secondary-color); /* A slightly lighter gray */
+  background-color: var(--secondary-color);
   padding: 8px 15px;
   border-radius: 5px;
   font-weight: 500;
