@@ -107,3 +107,32 @@
   from, to { border-color: transparent }
   50% { border-color: var(--primary-color) }
 }
+
+/* src/pages/Home.css */
+
+/* --- Default: HIDE these sections on Desktop --- */
+.mobile-only-view {
+  display: none;
+}
+
+/* --- Media Query: SHOW them on Mobile --- */
+@media (max-width: 768px) {
+  
+  .mobile-only-view {
+    display: block; /* Reveal the content */
+  }
+
+  /* Add some spacing between the stacked pages */
+  .mobile-section {
+    border-top: 1px solid #333; /* Optional separator line */
+    padding-bottom: 20px;
+  }
+
+  /* Optional: Hide the slider on mobile if you prefer 
+     the full project list below instead */
+  
+  .home-projects-section {
+    display: none;
+  }
+ 
+}

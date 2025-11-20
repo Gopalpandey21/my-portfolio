@@ -1,79 +1,56 @@
 /* src/pages/Skills.css */
 
-/* --- The Main Swiper Container --- */
-/* The "Cards" effect needs a fixed size */
-.mySkillSwiper {
-  width: 320px;
-  height: 400px; /* Give it a set height */
-  margin-top: 50px;
+.skills-grid {
+  display: grid;
+  /* Auto-fit creates as many columns as possible */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
 }
 
-/* --- Each Slide --- */
-/* The library styles the slide position.
-   We just need to make sure it's centered. */
-.swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* --- ADD THESE --- */
-  /* This blurs the card by default */
-  filter: blur(4px); 
-  /* This makes the blur fade in/out smoothly */
-  transition: filter 0.5s ease; 
-}
-
-/* --- ADD THIS NEW RULE --- */
-/* This makes the FRONT card sharp */
-.swiper-slide-active {
-  filter: blur(0px);
-}
-
-/* --- Your Skill Card --- */
 .skill-card {
-  /* ... (all your existing styles) ... */
   background-color: var(--card-color);
-  width: 100%;
-  height: 100%;
-  border-radius: 18px;
+  border-radius: 12px;
+  padding: 25px 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-
-  /* --- ADD THIS --- */
-  /* This helps the card transition smoothly with the blur */
-  transition: transform 0.5s ease;
+  gap: 15px;
 }
 
-.skill-card svg {
-  font-size: 5rem; /* A bit bigger */
-  color: var(--primary-color);
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.icon-wrapper {
+  font-size: 3.5rem; /* Icon size */
+  display: flex; /* Centers the icon properly */
+  align-items: center;
+  justify-content: center;
 }
 
 .skill-card p {
-  font-size: 1.5rem; /* A bit bigger */
-  font-weight: bold;
   margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
   color: var(--text-color);
 }
 
-/* --- Pagination Dots --- */
-/* We need to move the dots *below* the slider */
-.mySkillSwiper .swiper-pagination {
-  position: relative; /* Un-stick it from the bottom */
-  bottom: auto;
-  margin-top: 30px; /* Add space above dots */
-}
-
-.mySkillSwiper .swiper-pagination-bullet {
-  background: var(--text-color-secondary);
-  opacity: 0.8;
-}
-
-.mySkillSwiper .swiper-pagination-bullet-active {
-  background: var(--primary-color) !important;
-  opacity: 1;
+/* Mobile Adjustment */
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 15px;
+  }
+  
+  .icon-wrapper {
+    font-size: 2.5rem;
+  }
 }

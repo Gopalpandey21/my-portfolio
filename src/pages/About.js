@@ -6,11 +6,9 @@ const About = () => {
     <div className="page-container">
       <h1>About Me</h1>
       <p>
-        I’m Gopal Pandey, a passionate and detail-oriented <span style={{ fontWeight: 'bold' }}>Full-Stack Developer </span>currently pursuing my Master of Computer Applications at Graphic Era Hill University, Haldwani. I enjoy building efficient, user-focused web applications that blend functionality with clean design.
+        I’m Gopal Pandey, a Full-Stack Developer currently pursuing my MCA at Graphic Era Hill University, Haldwani. I enjoy building clean, user-friendly web applications and learning new technologies.
 
-        I’ve worked on projects like a Smart Event Management System with QR-based attendance tracking and a Student Feedback System that improves communication between students and faculty. My tech stack includes React, Node.js, Express.js, Django, MongoDB, Tailwind CSS, and JavaScript.
-
-        I’m always eager to learn new technologies, solve real-world problems, and collaborate on impactful projects. My goal is to grow as a developer while contributing to innovative and scalable software solutions.
+        I work with React, Node.js, Express.js, Django, MongoDB, Tailwind CSS, and JavaScript. I’m always looking to improve my skills and create meaningful, reliable software
       </p>
 
       <h2>Education</h2>
